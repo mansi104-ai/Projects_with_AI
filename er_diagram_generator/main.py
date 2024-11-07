@@ -76,8 +76,8 @@ if st.button("Generate ER Diagram"):
     pdf_bytes = convert_dot_to_bytes(er_diagram, format="pdf")
     st.download_button(label="Download as PDF", data=pdf_bytes, file_name="er_diagram.pdf", mime="application/pdf")
 
-    # Generate link to Streamlit app
-    st.write("Shareable Link:")
-    app_url = st.text_input("Enter your Streamlit app URL:", "https://share.streamlit.io/your_username/your_app")
-    if app_url:
-        st.markdown(f"[Click here to open the app]({app_url})")
+    # # Generate link to Streamlit app
+    # st.write("Shareable Link:")
+    # app_url = st.text_input("Enter your Streamlit app URL:", "https://share.streamlit.io/your_username/your_app")
+    # if app_url:
+    #     st.markdown(f"[Click here to open the app]({app_url})")
