@@ -1,5 +1,7 @@
 import streamlit as st
 import graphviz
+import base64
+from io import BytesIO
 
 # Define Streamlit UI
 st.title("Enhanced ER Diagram Generator")
@@ -56,7 +58,26 @@ def generate_er_diagram(entities, relationships):
 
     return dot
 
-# Display Diagram
+# Convert diagram to PNG and PDF for download
+def convert_dot_to_bytes(dot, format="png"):
+    img_data = dot.pipe(format=format)
+    return img_data
+
+# Display Diagram and provide download options
 if st.button("Generate ER Diagram"):
     er_diagram = generate_er_diagram(entities, relationships)
     st.graphviz_chart(er_diagram)
+
+    # Convert to PNG
+    png_bytes = convert_dot_to_bytes(er_diagram, format="png")
+    st.download_button(label="Download as PNG", data=png_bytes, file_name="er_diagram.png", mime="image/png")
+
+    # Convert to PDF
+    pdf_bytes = convert_dot_to_bytes(er_diagram, format="pdf")
+    st.download_button(label="Download as PDF", data=pdf_bytes, file_name="er_diagram.pdf", mime="application/pdf")
+
+    # Generate link to Streamlit app
+    st.write("Shareable Link:")
+    app_url = st.text_input("Enter your Streamlit app URL:", "https://share.streamlit.io/your_username/your_app")
+    if app_url:
+        st.markdown(f"[Click here to open the app]({app_url})")
