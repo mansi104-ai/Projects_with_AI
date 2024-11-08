@@ -42,7 +42,7 @@ This will start a local server and open the application in your default web brow
 1. **Fork** the repository by clicking the "Fork" button at the top right.
 2. **Clone** your forked repository:
     ```bash
-    git clone <your-forked-repository-url>
+    git clone https://github.com/mansi104-ai/Projects_with_AI
     cd er_diagram_generator
     ```
 3. **Create a Branch** for your feature or bug fix:
@@ -51,7 +51,7 @@ This will start a local server and open the application in your default web brow
     ```
 4. **Commit** your changes:
     ```bash
-    git commit -m "Add a feature"
+    git commit -m "Added a feature <feature-name>"
     ```
 5. **Push** the branch to your forked repository:
     ```bash
