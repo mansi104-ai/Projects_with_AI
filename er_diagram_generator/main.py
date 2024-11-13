@@ -3,7 +3,7 @@ import graphviz
 import ast
 
 # Define Streamlit UI
-st.title("Enhanced ER Diagram Generator with Many-to-Many Relationships")
+st.title("Enhanced ER Diagram Generator")
 
 # Set max limits for entities and attributes
 MAX_ENTITIES = 10
