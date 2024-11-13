@@ -43,7 +43,6 @@ toml
 toolz
 tornado
 typing-extensions
-tzdata
 tzlocal
 urllib3
 validators
